@@ -37,6 +37,14 @@ h6 {
     font-weight: 700;
 }
 
+.not-as-big {
+    font-size: 100px;
+}
+
+.bigger {
+    font-size: 104px;
+}
+
 .big {
     font-size: 150px;
 }
@@ -452,4 +460,12 @@ footer .footer-below {
     -webkit-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
+}
+
+.hover-display {
+    display: none;
+}
+
+.hovering:hover + .hover-display {
+    display: block;
 }
