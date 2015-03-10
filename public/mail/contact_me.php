@@ -2,7 +2,7 @@
 composer require wildbit/postmark-php
 use Postmark\PostmarkClient;
 
-$client = new PostmarkClient("4fdc7a2a-22d7-480d-ad89-b30be1400e31");
+$client = new PostmarkClient("b3842bf0-2379-4c7f-a8c7-1612fdfa3e9d");
 // Check for empty fields
 if(empty($_POST['name'])  		||
    empty($_POST['email']) 		||
