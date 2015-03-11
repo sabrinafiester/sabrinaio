@@ -80,12 +80,11 @@ hr.star-light:after {
 }
 
 hr.star-primary {
-    border-color: #2c3e50;
+    border-color: #333;
 }
 
 hr.star-primary:after {
-    color: #2c3e50;
-    background-color: #fff;
+    color: #333;
 }
 
 .img-centered {
@@ -94,7 +93,7 @@ hr.star-primary:after {
 
 header {
     text-align: center;
-    color: #fff;
+    color: #333;
     background: #a97cbc;
 }
 
@@ -146,6 +145,7 @@ header .intro-text .skills {
 
     .navbar-fixed-top .navbar-brand {
         font-size: 2em;
+        color: #333;
         -webkit-transition: all .3s;
         -moz-transition: all .3s;
         transition: all .3s;
@@ -193,8 +193,8 @@ section h2 {
 }
 
 section.success {
-    color: #fff;
     background: #a97cbc;
+    color: #333;
 }
 
 @media(max-width:767px) {
@@ -205,6 +205,13 @@ section.success {
     section.first {
         padding-top: 75px;
     }
+}
+.flowers {
+    background-image: url("../img/greyfloral.png");
+}
+
+.mooning {
+    background-image: url("../img/mooning.png");
 }
 
 #portfolio .portfolio-item {
