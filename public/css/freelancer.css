@@ -100,7 +100,7 @@ hr.star-primary:after {
 header {
     text-align: center;
     color: #fff;
-    background: #a97cbc;
+    background: #C5ACE6;
 }
 
 header .container {
@@ -247,7 +247,7 @@ section.success {
     width: 100%;
     height: 100%;
     opacity: 0;
-    background: #a97cbc;
+    background: #C5ACE6;
     -webkit-transition: all ease .5s;
     -moz-transition: all ease .5s;
     transition: all ease .5s;
@@ -354,7 +354,7 @@ section.success {
 }
 
 .floating-label-form-group-with-focus label {
-    color: #a97cbc;
+    color: #C5ACE6;
 }
 
 form .row:first-child .floating-label-form-group {
