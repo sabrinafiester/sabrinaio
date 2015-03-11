@@ -22,9 +22,13 @@ a:focus,
 a:active,
 a.active {
     outline: 0;
-    color: #a97cbc;
+    color: #fff;
 }
 
+.navbar-default .navbar-nav>.active>a {
+    background-color: transparent;
+    color: #C5ACE6;
+}
 
 h1,
 h2,
@@ -49,6 +53,9 @@ h6 {
     font-size: 150px;
 }
 
+.small {
+    font-size: 20px;
+}
 hr.star-light,
 hr.star-primary {
     margin: 25px auto 30px;
@@ -61,7 +68,7 @@ hr.star-primary {
 
 hr.star-light:after,
 hr.star-primary:after {
-    content: "\f005";
+    content: "\f111";
     display: inline-block;
     position: relative;
     top: -.8em;
@@ -76,15 +83,14 @@ hr.star-light {
 
 hr.star-light:after {
     color: #fff;
-    background-color: #a97cbc;
 }
 
 hr.star-primary {
-    border-color: #333;
+    border-color: #444;
 }
 
 hr.star-primary:after {
-    color: #333;
+    color: #444;
 }
 
 .img-centered {
@@ -93,7 +99,7 @@ hr.star-primary:after {
 
 header {
     text-align: center;
-    color: #333;
+    color: #fff;
     background: #a97cbc;
 }
 
@@ -145,7 +151,7 @@ header .intro-text .skills {
 
     .navbar-fixed-top .navbar-brand {
         font-size: 2em;
-        color: #333;
+        color: #444;
         -webkit-transition: all .3s;
         -moz-transition: all .3s;
         transition: all .3s;
@@ -193,8 +199,7 @@ section h2 {
 }
 
 section.success {
-    background: #a97cbc;
-    color: #333;
+    color: #fff;
 }
 
 @media(max-width:767px) {
@@ -208,10 +213,21 @@ section.success {
 }
 .flowers {
     background-image: url("../img/greyfloral.png");
+    color: #444;
 }
 
 .mooning {
     background-image: url("../img/mooning.png");
+}
+
+.textured-purple {
+    background-image: url("../img/texturedPurple.png");
+    color: #fff;
+}
+
+.textured-grey {
+    background-image: url("../img/retro_intro.png");
+    color: #444;
 }
 
 #portfolio .portfolio-item {
@@ -275,7 +291,7 @@ section.success {
     margin-top: 15px;
     border: solid 2px #fff;
     font-size: 20px;
-    color: #fff;
+    /*color: #fff;*/
     background: 0 0;
     transition: all .3s ease-in-out;
 }
@@ -284,9 +300,9 @@ section.success {
 .btn-outline:focus,
 .btn-outline:active,
 .btn-outline.active {
-    border: solid 2px #fff;
-    color: #a97cbc;
-    background: #fff;
+    border: solid 2px #444;
+    color: #C5ACE6;
+    background: #444;
 }
 
 .floating-label-form-group {
@@ -346,7 +362,6 @@ form .row:first-child .floating-label-form-group {
 }
 
 footer {
-    color: #fff;
 }
 
 footer h3 {
@@ -355,7 +370,6 @@ footer h3 {
 
 footer .footer-above {
     padding-top: 50px;
-    background-color: #8e8b8f;
 }
 
 footer .footer-col {
@@ -364,14 +378,14 @@ footer .footer-col {
 
 footer .footer-below {
     padding: 25px 0;
-    background-color: #747372;
 }
 
 .btn-social {
     display: inline-block;
     width: 50px;
     height: 50px;
-    border: 2px solid #fff;
+    color: #444;
+    border: 2px solid #444;
     border-radius: 100%;
     text-align: center;
     font-size: 20px;
@@ -379,8 +393,8 @@ footer .footer-below {
 }
 
 .btn-success {
-    background-color: #a97cbc;
-    border-color: #a97cbc;
+    background-color: #C5ACE6;
+    border-color: #C5ACE6;
 }
 
 .btn:focus,
