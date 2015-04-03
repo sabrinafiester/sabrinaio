@@ -1,0 +1,43 @@
+.not-as-big {
+    font-size: 100px;
+}
+
+.bigger {
+    font-size: 104px;
+}
+
+.big {
+    font-size: 150px;
+}
+
+.small {
+    font-size: 20px;
+}
+
+.contact-form {
+	padding-left: 25px;
+	margin-top: 0px;
+	margin-left: 0px;
+	margin-bottom: 0px;
+	margin-right: 0px;
+
+}
+
+.flowers {
+    background-image: url("../img/greyfloral.png");
+    color: #444;
+}
+
+.mooning {
+    background-image: url("../img/mooning.png");
+}
+
+.textured-purple {
+    background-image: url("../img/texturedPurple.png");
+    color: #fff;
+}
+
+.textured-grey {
+    background-image: url("../img/retro_intro.png");
+    color: #444;
+}
