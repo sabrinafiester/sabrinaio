@@ -2,6 +2,7 @@
 <head>
 	<title>Balloon Pop</title>
 	<link rel="stylesheet" type="text/css" href="SquidMonster/src/monsterSmash.css">
+	<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
 </head>
 
 
@@ -16,7 +17,7 @@ var squidMonster =
 {
 //tilesheet source, size of each frame, and number of game columns
 tileGraphic: "balloonTileSheet.png",
-//size: 256,
+size: 256,
 columns: 3,
 
 //The numbers of the animation frames and the starting frame
@@ -175,7 +176,6 @@ function keydownHandler(event) {
 		//begin the game timer
 		gameTimer.time = 60;
 		gameTimer.begin();
-
 		//begin the animation loop
 		aniMate();
 		
@@ -189,9 +189,9 @@ tileGraphic.addEventListener("load", loadHandler, false);
 tileGraphic.src = "SquidMonster/images/" + squidMonster.tileGraphic;
 
 //The number of rows and columns and the size of each cell
-var rows = 3;
-var columns = 4;
-//var size = squidMonster.size;
+var rows = 6;
+var columns = 3;
+var size = squidMonster.size;
 var size = 100;
 var space = 5;
 
@@ -235,9 +235,12 @@ squidMonsterObjects.push(newMonsterObject);
 
 //::::::: 8 lines go here :::::::
 var canvas = document.createElement("canvas");
+ocean.appendChild(canvas);
+size = $("canvas").css("width").replace("px", "");
+//alert(size);
 canvas.setAttribute("width", size);
 canvas.setAttribute("height", size);
-ocean.appendChild(canvas);
+//alert(canvas.width);
 canvas.style.top = row * (size + space) + "px";
 canvas.style.left = column * (size + space) +"px";
 canvas.addEventListener("mousedown", mousedownHandler, false);
@@ -255,7 +258,8 @@ function aniMate()
 //Call aniMate every 120 milliseconds while the timer > 0.
 if(gameTimer.time > 0)
 {
-setTimeout(aniMate, 120);
+	$('html, body').scrollTop( $(document).height() );
+	setTimeout(aniMate, 120);
 }
 
 //Loop through all the monsters in the array, call aniMate method
@@ -279,6 +283,7 @@ function gameOver()
 {
 //Stop the gameTimer
 gameTimer.stop();
+$('html, body').scrollTop( 0 );
 
 //Remove the mousedown event listeners from the
 //canvas tags so that they can't be clicked
