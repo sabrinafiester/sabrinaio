@@ -6,7 +6,7 @@ get '/' do
   erb :index
 end
 
-get '/balloon' do
+get '/balloon-game' do
 	erb :SquidMonster
 end
 

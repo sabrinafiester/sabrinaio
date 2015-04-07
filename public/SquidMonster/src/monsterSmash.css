@@ -1,11 +1,14 @@
-
-
-#ocean
-{
-  position: relative;
-  height: 700px;
-  margin-left: 50px;
-  text-align: center;
+body {
+	background-image: url("../images/texturedPurple.png");
+    color: #444;
+}
+.time-and-score{
+font-family: helvetica;
+font-size: 24px;
+font-style: normal;
+color: #222;
+font-weight: 700;
+text-align: center;
 }
 
 

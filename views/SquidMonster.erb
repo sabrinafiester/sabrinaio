@@ -1,24 +1,12 @@
 <!doctype html>
-<title>Balloon Pop</title>
+<head>
+	<title>Balloon Pop</title>
+	<link rel="stylesheet" type="text/css" href="SquidMonster/src/monsterSmash.css">
+</head>
 
-<style type="text/css">
-body {
-	background-image: url("img/texturedPurple.png");
-    color: #444;
-}
-.time-and-score{
-font-family: helvetica;
-font-size: 24px;
-font-style: normal;
-color: #222;
-font-weight: 700;
-text-align: center;
-}
-}
-</style>
 
 <body class="time-and-score">
-<p id="titleGraphic"><img src="SquidMonster/images/balloonTitle.png" alt="Title"></p><p id="output"></p><p id="anyKey">Press any key to begin!</p>
+<p id="titleGraphic"><img src="SquidMonster/images/balloonTitle.png" alt="Title"></p><p id="output"></p><p id="anyKey">Press any key to begin!</p><div id="mute"><label for="mute"><p style='font-size:.75em'>No Music</label><input type='checkbox' size='50' name='mute' id='muteBox'> </p></div>
 <div id="ocean"></div>
 
 <script>
@@ -28,7 +16,7 @@ var squidMonster =
 {
 //tilesheet source, size of each frame, and number of game columns
 tileGraphic: "balloonTileSheet.png",
-size: 256,
+//size: 256,
 columns: 3,
 
 //The numbers of the animation frames and the starting frame
@@ -66,9 +54,9 @@ this.waitTime = Math.ceil(Math.random() * 90);
 aniMate: function()
 { 
 this.sourceX 
-= Math.floor(this.currentFrame % this.columns) * this.size;
+= Math.floor(this.currentFrame % this.columns) * 256;
 this.sourceY 
-= Math.floor(this.currentFrame / this.columns) * this.size;
+= Math.floor(this.currentFrame / this.columns) * 256;
 
 //Figure out the squidMonster's state
 if(this.state !== this.strike)
@@ -141,7 +129,7 @@ break;
 }
 }
 };
-
+ var isMuted = false;
 //======================================================================
 //======================== The gameTimer object ========================
 
@@ -180,15 +168,20 @@ function keydownHandler(event) {
 		document.querySelector("#ocean").innerHTML = "";
 		squidMonsterSquishes = 0;
 		document.querySelector("#titleGraphic").innerHTML = " <img src='SquidMonster/images/balloonTitle.png'> ";
+		isMuted = document.getElementById("muteBox").checked;
+		document.querySelector("#mute").innerHTML = "";
+
 		fillOcean();
 		//begin the game timer
-		gameTimer.time = 30;
+		gameTimer.time = 60;
 		gameTimer.begin();
 
 		//begin the animation loop
 		aniMate();
+		
 	
 }
+
 
 //Load animation tile sheet
 var tileGraphic = new Image();
@@ -198,7 +191,8 @@ tileGraphic.src = "SquidMonster/images/" + squidMonster.tileGraphic;
 //The number of rows and columns and the size of each cell
 var rows = 3;
 var columns = 4;
-var size = squidMonster.size;
+//var size = squidMonster.size;
+var size = 100;
 var space = 5;
 
 //Arrays for the squidMonsters, canvases and drawing surfaces
@@ -212,10 +206,10 @@ var squidMonsterSquishes = 0;
 //Get a referene to the output
 var output = document.querySelector("#output");
 var ocean = document.querySelector("#ocean");
+var mute = document.querySelector("#mute");
 function loadHandler()
 { 
 	window.addEventListener("keydown", keydownHandler, false);
-
 //Plot the grid of monsters
 //fillOcean();
 
@@ -299,10 +293,12 @@ document.querySelector("#titleGraphic").innerHTML = " <img src='SquidMonster/ima
 document.querySelector("#ocean").innerHTML = "";
 window.addEventListener("keydown", keydownHandler, false);
 document.querySelector("#anyKey").innerHTML = "Press any key to play again.";
+document.querySelector("#mute").innerHTML ="<label for='mute'><p style='font-size:.75em'>No Music</label><input type='checkbox' size='50' name='mute' id='muteBox'> </p>";
 
 
 }
 function playSound(soundfile_ogg, soundfile_mp, soundfile_ma) {
+	if (!isMuted) {
 if ("Audio" in window) {
 var a = new Audio();
 if (!!(a.canPlayType && a.canPlayType('audio/ogg; codecs="vorbis"')
@@ -321,6 +317,7 @@ a.autoplay = true;
 return;
 } else {
 alert("Time almost up");
+}
 }
 }
 function mousedownHandler(event)
@@ -361,7 +358,7 @@ drawingSurface.clearRect(0, 0, size, size);
 drawingSurface.drawImage
 (
 tileGraphic, 
-squidMonster.sourceX, squidMonster.sourceY, size, size, 
+squidMonster.sourceX, squidMonster.sourceY, 256, 256, 
 0, 0, size, size
 );
 }
