@@ -10,6 +10,10 @@ get '/balloon-game' do
 	erb :SquidMonster
 end
 
+get '/gambler' do
+	erb :GamblerMatchCasino
+end
+
 post '/contact' do
   erb :contact
 end
